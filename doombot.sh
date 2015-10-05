@@ -14,6 +14,7 @@ tail -f $botfile | openssl s_client -CAfile ca.pem -connect puppetconf.irc.slack
         echo "NICK doom" > $botfile
         echo "JOIN #test" > $botfile
         echo "JOIN #random" > $botfile
+        echo "PART #general" > $botfile
         started="yes"
     fi
     read irc
