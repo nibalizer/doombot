@@ -33,9 +33,8 @@ tail -f $botfile | openssl s_client -CAfile ca.pem -connect puppetconf.irc.slack
     fi
 
 case $cmd in
-        #"!add") line="$args $line" ;;
-        #"!list") echo "PRIVMSG $chan :$line" >> $botfile ;;
-        "/birthday") echo "PRIVMSG $chan :$birthday" >> $botfile ;;
+        "!help") echo "PRIVMSG $chan :!doom !source !help" >> $botfile ;;
+        "!source") echo "PRIVMSG $chan :https://github.com/nibalizer/doombot" >> $botfile ;;
         "!doom")
           echo -n "PRIVMSG $chan :" >> $botfile
           cat doom.txt | sort -R | head -n 1 >> $botfile
